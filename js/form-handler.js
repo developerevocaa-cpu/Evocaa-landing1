@@ -9,7 +9,7 @@
  *   1. User submits form
  *   2. Data is sent to the Google Apps Script URL (from env)
  *   3. Apps Script saves to the Google Sheet + sends confirmation email
- *   4. User sees the success message
+ *   4. User is redirected to the thank-you page (thankyou.html)
  */
 (function () {
   'use strict';
@@ -45,9 +45,9 @@
 
       submit(form, scriptUrl, function (ok, message) {
         if (ok) {
-          showMessage(successMsg, errorMsg);
-          form.reset();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Success - send the visitor to the dedicated thank-you page.
+          window.location.href = 'thankyou.html';
+          return;
         } else {
           showMessage(errorMsg, successMsg);
           errorText.textContent = message;
@@ -72,29 +72,37 @@
   function validate(form) {
     var valid = true;
 
-    // Required text/email/tel fields
-    ['name', 'business', 'email', 'phone'].forEach(function (name) {
+    // Required free-text fields
+    ['name', 'business', 'goal_90_days'].forEach(function (name) {
       var field = form.elements[name];
       var ok = !!field.value.trim();
-      if (name === 'email') {
-        // eslint-disable-next-line no-useless-escape
-        ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
-      }
       if (!ok) valid = false;
       toggleInvalid(field, !ok);
     });
 
-    // Required selects
-    ['revenue', 'bottleneck'].forEach(function (name) {
-      var field = form.elements[name];
-      var ok = !!field.value;
+    // WhatsApp number (required + basic phone format)
+    var whatsapp = form.elements.whatsapp;
+    var wOk = !!whatsapp.value.trim() && /^[+]?[0-9\s\-()]{7,20}$/.test(whatsapp.value.trim());
+    if (!wOk) valid = false;
+    toggleInvalid(whatsapp, !wOk);
+
+    // Required radio groups
+    [
+      'business_age',
+      'monthly_revenue',
+      'marketing_spend',
+      'biggest_challenge',
+      'invest_499'
+    ].forEach(function (name) {
+      var node = form.elements[name];
+      var ok = !!node.value;
+      var first = node[0];
       if (!ok) valid = false;
-      toggleInvalid(field, !ok);
+      if (first) toggleInvalid(first, !ok);
     });
 
     return valid;
   }
-
   function toggleInvalid(field, invalid) {
     var wrap = field.closest('.field');
     if (!wrap) return;
@@ -117,15 +125,18 @@
     var btn = document.getElementById('submitBtn');
     var originalLabel = btn.textContent;
     btn.disabled = true;
-    btn.textContent = 'Booking…';
+    btn.textContent = 'Submitting…';
 
     var payload = new URLSearchParams();
     payload.append('name', form.elements.name.value.trim());
     payload.append('business', form.elements.business.value.trim());
-    payload.append('email', form.elements.email.value.trim());
-    payload.append('phone', form.elements.phone.value.trim());
-    payload.append('revenue', form.elements.revenue.value);
-    payload.append('bottleneck', form.elements.bottleneck.value);
+    payload.append('whatsapp', form.elements.whatsapp.value.trim());
+    payload.append('business_age', form.elements.business_age.value);
+    payload.append('monthly_revenue', form.elements.monthly_revenue.value);
+    payload.append('marketing_spend', form.elements.marketing_spend.value);
+    payload.append('biggest_challenge', form.elements.biggest_challenge.value);
+    payload.append('goal_90_days', form.elements.goal_90_days.value.trim());
+    payload.append('invest_499', form.elements.invest_499.value);
 
     fetch(url, {
       method: 'POST',

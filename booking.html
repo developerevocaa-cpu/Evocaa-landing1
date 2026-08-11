@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Diagnosis - Evocaa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0B1E36;
+    --navy:#122A4C;
+    --navy-soft:#1E3A63;
+    --gold:#B8863B;
+    --gold-light:#D9B36C;
+    --paper:#FCFBF9;
+    --ink:#14202E;
+    --slate:#5B6674;
+    --line:#E7E3DA;
+    --card:#FFFFFF;
+    --radius:16px;
+    --shadow-sm: 0 1px 2px rgba(11,30,54,0.06), 0 1px 1px rgba(11,30,54,0.04);
+    --shadow-md: 0 8px 24px rgba(11,30,54,0.08), 0 2px 6px rgba(11,30,54,0.04);
+    --shadow-lg: 0 24px 60px rgba(11,30,54,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:'Inter',sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap-narrow{max-width:720px; margin:0 auto; padding:0 24px;}
+
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:16px 32px; border-radius:100px; font-weight:600; font-size:16px; cursor:pointer; border:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease; white-space:nowrap; font-family:'Inter',sans-serif; }
+  .btn-primary{ background:var(--navy-deep); color:#fff; box-shadow:var(--shadow-sm); }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow-md); background:var(--navy); }
+  .btn-gold{ background:linear-gradient(180deg, var(--gold-light), var(--gold)); color:#241605; box-shadow:var(--shadow-sm); }
+  .btn-gold:hover{ transform:translateY(-1px); box-shadow:var(--shadow-md); }
+  .btn-ghost{ background:transparent; color:var(--navy-deep); border:1px solid var(--line); }
+  .btn-ghost:hover{ background:#F4F2EC; }
+  .btn[disabled]{ opacity:.6; cursor:default; transform:none; box-shadow:none; }
+
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(252,251,249,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1120px; margin:0 auto; }
+  .logo{ font-family:'Fraunces',serif; font-weight:600; font-size:20px; letter-spacing:-0.01em; color:var(--navy-deep); }
+  .logo span{ color:var(--gold); }
+  .nav-back{ display:inline-flex; padding:11px 22px; font-size:14px; }
+
+  .booking-section{ padding:72px 0 96px; }
+  .form-card{ max-width:560px; margin:0 auto; background:var(--card); border-radius:24px; border:1px solid var(--line); box-shadow:var(--shadow-lg); overflow:hidden; }
+  .form-body{ padding:32px 40px 40px; }
+  .field{ margin-bottom:22px; }
+  .field-group{ border:none; margin:0; padding:0; }
+  .field-group legend{ display:block; font-size:13px; font-weight:600; color:var(--navy-deep); margin-bottom:12px; letter-spacing:0.01em; }
+  .field label{ display:block; font-size:13px; font-weight:600; color:var(--navy-deep); margin-bottom:8px; letter-spacing:0.01em; }
+  .req{ color:var(--gold); }
+  .field input[type="text"], .field input[type="tel"]{ width:100%; padding:14px 16px; font-size:15px; font-family:'Inter',sans-serif; color:var(--ink); background:#FCFBF9; border:1px solid var(--line); border-radius:12px; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease; appearance:none; -webkit-appearance:none; }
+  .field input::placeholder{ color:#A8AFB9; }
+  .field input:focus{ outline:none; border-color:var(--gold); background:#fff; box-shadow:0 0 0 3px rgba(184,134,59,0.15); }
+  .field .err-msg{ font-size:12.5px; color:#C0392B; margin-top:6px; display:none; }
+  .field.invalid .err-msg{ display:block; }
+  .field.invalid input[type="text"], .field.invalid input[type="tel"]{ border-color:#C0392B; }
+
+  .radio-group{ display:flex; flex-direction:column; gap:10px; }
+  .radio{ display:flex; align-items:center; gap:12px; padding:13px 16px; background:#FCFBF9; border:1px solid var(--line); border-radius:12px; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .radio:hover{ border-color:var(--gold); }
+  .radio input[type="radio"]{ flex-shrink:0; width:18px; height:18px; margin:0; cursor:pointer; accent-color:var(--gold); }
+  .radio span{ font-size:14.5px; color:var(--ink); }
+  .field-group.invalid .radio{ border-color:#C0392B; }
+
+  .form-actions .btn{ width:100%; }
+
+  .msg{ display:none; padding:32px 40px; text-align:center; }
+  .msg.show{ display:block; animation:fadeIn .3s ease; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+  .msg .msg-icon{ width:64px; height:64px; border-radius:50%; margin:0 auto 18px; display:flex; align-items:center; justify-content:center; }
+  .msg h3{ font-family:'Fraunces',serif; font-weight:500; font-size:22px; color:var(--navy-deep); margin-bottom:10px; }
+  .msg p{ font-size:15px; color:var(--slate); max-width:420px; margin:0 auto 6px; }
+  .msg .btn{ margin-top:24px; }
+  .msg-error .msg-icon{ background:#FBE9E7; }
+
+  footer{ padding:40px 24px; text-align:center; color:var(--slate); font-size:13px; border-top:1px solid var(--line); }
+  @media (max-width:560px){ .form-body, .msg{ padding-left:24px; padding-right:24px; } .booking-section{ padding:56px 0 72px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">evocaa<span>.</span></a>
+    <a href="index.html" class="btn btn-ghost nav-back">← Back to home</a>
+  </div>
+</nav>
+<section class="booking-section">
+  <div class="wrap-narrow">
+    <div class="form-card">
+      <form id="bookingForm" novalidate>
+        <div class="form-body">
+
+          <div class="field">
+            <label for="name">Your Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+            <p class="err-msg">Please enter your name.</p>
+          </div>
+
+          <div class="field">
+            <label for="business">Business / Company Name <span class="req">*</span></label>
+            <input type="text" id="business" name="business" autocomplete="organization" placeholder="Your business or company" required>
+            <p class="err-msg">Please enter your business / company name.</p>
+          </div>
+
+          <div class="field">
+            <label for="whatsapp">WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" placeholder="e.g. +91 98765 43210" required>
+            <p class="err-msg">Please enter a valid WhatsApp number.</p>
+          </div>
+
+          <fieldset class="field field-group">
+            <legend>How long have you been running your interior business? <span class="req">*</span></legend>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="business_age" value="Less than 1 year" required><span>Less than 1 year</span></label>
+              <label class="radio"><input type="radio" name="business_age" value="1–3 years"><span>1–3 years</span></label>
+              <label class="radio"><input type="radio" name="business_age" value="3–5 years"><span>3–5 years</span></label>
+              <label class="radio"><input type="radio" name="business_age" value="5+ years"><span>5+ years</span></label>
+            </div>
+            <p class="err-msg">Please select an option.</p>
+          </fieldset>
+
+          <fieldset class="field field-group">
+            <legend>What is your average monthly revenue? <span class="req">*</span></legend>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="monthly_revenue" value="Below ₹3L" required><span>Below ₹3L</span></label>
+              <label class="radio"><input type="radio" name="monthly_revenue" value="₹3L–₹5L"><span>₹3L–₹5L</span></label>
+              <label class="radio"><input type="radio" name="monthly_revenue" value="₹5L–₹10L"><span>₹5L–₹10L</span></label>
+              <label class="radio"><input type="radio" name="monthly_revenue" value="₹10L–₹25L"><span>₹10L–₹25L</span></label>
+              <label class="radio"><input type="radio" name="monthly_revenue" value="₹25L+"><span>₹25L+</span></label>
+            </div>
+            <p class="err-msg">Please select an option.</p>
+          </fieldset>
+
+          <fieldset class="field field-group">
+            <legend>Are you currently spending money on marketing? <span class="req">*</span></legend>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="marketing_spend" value="Yes" required><span>Yes</span></label>
+              <label class="radio"><input type="radio" name="marketing_spend" value="No"><span>No</span></label>
+            </div>
+            <p class="err-msg">Please select an option.</p>
+          </fieldset>
+
+          <fieldset class="field field-group">
+            <legend>What is your biggest business challenge right now? <span class="req">*</span></legend>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="biggest_challenge" value="Getting better quality leads" required><span>Getting better quality leads</span></label>
+              <label class="radio"><input type="radio" name="biggest_challenge" value="Converting more enquiries into clients"><span>Converting more enquiries into clients</span></label>
+              <label class="radio"><input type="radio" name="biggest_challenge" value="Marketing ROI"><span>Marketing ROI</span></label>
+              <label class="radio"><input type="radio" name="biggest_challenge" value="Sales & follow-up"><span>Sales & follow-up</span></label>
+              <label class="radio"><input type="radio" name="biggest_challenge" value="Predictable growth"><span>Predictable growth</span></label>
+              <label class="radio"><input type="radio" name="biggest_challenge" value="I'm not sure where the problem is"><span>I'm not sure where the problem is</span></label>
+            </div>
+            <p class="err-msg">Please select an option.</p>
+          </fieldset>
+
+          <div class="field">
+            <label for="goal_90_days">What do you want to achieve in the next 90 days? <span class="req">*</span></label>
+            <input type="text" id="goal_90_days" name="goal_90_days" placeholder="Your goal for the next 90 days" required>
+            <p class="err-msg">Please enter your 90-day goal.</p>
+          </div>
+
+          <fieldset class="field field-group">
+            <legend>Are you willing to invest ₹499 for the Business Growth Audit? <span class="req">*</span></legend>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="invest_499" value="Yes, I'm ready" required><span>Yes, I'm ready</span></label>
+              <label class="radio"><input type="radio" name="invest_499" value="I want to understand the process first"><span>I want to understand the process first</span></label>
+            </div>
+            <p class="err-msg">Please select an option.</p>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-gold" id="submitBtn">Submit</button>
+          </div>
+
+        </div>
+      </form>
+
+      <!-- ERROR -->
+      <div class="msg msg-error" id="errorMsg" role="alert">
+        <div class="msg-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="none" stroke="#C0392B" stroke-width="2"/><path d="M9 9l10 10M19 9L9 19" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Something went wrong</h3>
+        <p id="errorText">We couldn't submit your booking just now. Please try again in a moment.</p>
+        <button type="button" class="btn btn-primary" onclick="retryForm()">Try again</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>© Evocaa. Business Growth Consulting for Interior Design Businesses.</footer>
+
+<script type="module" src="config.js"></script>
+<script type="module" src="js/form-handler.js"></script>
+</body>
+</html>

@@ -13,15 +13,13 @@ Thumbs.db
 *.swp
 *.swo
 
+dist/
 # Node
 node_modules/
 npm-debug.log
 yarn-error.log
 pnpm-debug.log
 
-# Build output
-dist/
-build/
 
 # Hosting
 .vercel/
