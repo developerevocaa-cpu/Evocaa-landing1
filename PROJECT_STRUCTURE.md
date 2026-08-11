@@ -8,13 +8,18 @@ evocaa-project/
 ├── config.js                     # Environment variable loader -> window.CONFIG
 ├── js/
 │   └── form-handler.js           # Form validation + submission to Google Apps Script
+├── package.json                  # Build tooling (Vite) + npm scripts
+├── vite.config.js                # Vite multi-page build config (index.html + booking.html)
 ├── .env.local                    # Local environment variables (DO NOT COMMIT)
 ├── .env.example                  # Template for environment variables
 ├── google-script.gs              # Google Apps Script code (paste & deploy as Web App)
-├── SETUP.md                      # Setup & deployment guide
-├── gitignore_template            # Git ignore template (rename to .gitignore to use)
+├── SETUP.md                      # Setup & deployment guide (incl. Render)
+├── .gitignore                    # Git ignore rules
 └── PROJECT_STRUCTURE.md          # This file
 ```
+
+> `node_modules/` and `dist/` are build artifacts — created locally by
+> `npm install` / `npm run build` and ignored by Git.
 
 ---
 
@@ -55,11 +60,24 @@ evocaa-project/
 | `VITE_GOOGLE_SHEET_ID` | No | Informational only — the Apps Script auto-detects its bound sheet. |
 | `VITE_OWNER_EMAIL` | No | Informational only — the Apps Script auto-detects the owner email. |
 
-Add to Vercel dashboard (or `.env.local` for local dev):
+Add to Render dashboard (or `.env.local` for local dev):
 
 ```
 VITE_GOOGLE_SCRIPT_URL=https://script.google.com/macros/d/YOUR_SCRIPT_ID/userweb
 ```
+
+---
+
+## Build & Deploy (Render)
+
+1. Push the project to a Git repository (GitHub / GitLab / Bitbucket).
+2. Render Dashboard → **New → Static Site** → connect the repository.
+3. **Build Command:** `npm run build`
+4. **Publish Directory:** `dist`
+5. **Environment:** add `VITE_GOOGLE_SCRIPT_URL` = your Apps Script Web App URL.
+6. Click **Create Static Site**.
+
+The Vite build outputs both `index.html` and `booking.html` into `dist/`.
 
 ---
 
