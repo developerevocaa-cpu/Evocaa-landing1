@@ -1,636 +1,1363 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evocaa - 90-Day Business Growth Diagnosis</title>
-<meta name="description" content="A 90-day growth diagnosis for interior designers in Tamil Nadu who are busy with projects but not getting enough new enquiries. Book for ₹499.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy-deep:#0B1E36;
-    --navy:#122A4C;
-    --navy-soft:#1E3A63;
-    --gold:#B8863B;
-    --gold-light:#D9B36C;
-    --paper:#FCFBF9;
-    --ink:#14202E;
-    --slate:#5B6674;
-    --line:#E7E3DA;
-    --card:#FFFFFF;
-    --radius:16px;
-    --shadow-sm: 0 1px 2px rgba(11,30,54,0.06), 0 1px 1px rgba(11,30,54,0.04);
-    --shadow-md: 0 8px 24px rgba(11,30,54,0.08), 0 2px 6px rgba(11,30,54,0.04);
-    --shadow-lg: 0 24px 60px rgba(11,30,54,0.16);
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter', sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
-  }
-  a{color:inherit;text-decoration:none;}
-  img,svg{display:block;max-width:100%;}
-  .display{font-family:'Fraunces', serif; font-optical-sizing:auto; letter-spacing:-0.01em;}
-  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 clamp(16px, 4vw, 24px);}
-  .wrap-narrow{max-width:760px; margin:0 auto; padding:0 clamp(16px, 4vw, 24px);}
-  section{padding:clamp(56px, 8vw, 96px) 0;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evocaa - 90-Day Business Growth Diagnosis</title>
+  <meta name="description"
+    content="A 90-day growth diagnosis for interior designers in Tamil Nadu who are busy with projects but not getting enough new enquiries. Book for ₹499.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy-deep: #0B1E36;
+      --navy: #122A4C;
+      --navy-soft: #1E3A63;
+      --gold: #B8863B;
+      --gold-light: #D9B36C;
+      --paper: #FCFBF9;
+      --ink: #14202E;
+      --slate: #5B6674;
+      --line: #E7E3DA;
+      --card: #FFFFFF;
+      --radius: 16px;
+      --shadow-sm: 0 1px 2px rgba(11, 30, 54, 0.06), 0 1px 1px rgba(11, 30, 54, 0.04);
+      --shadow-md: 0 8px 24px rgba(11, 30, 54, 0.08), 0 2px 6px rgba(11, 30, 54, 0.04);
+      --shadow-lg: 0 24px 60px rgba(11, 30, 54, 0.16);
+    }
 
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    padding:clamp(13px, 2vw, 16px) clamp(20px, 4vw, 32px);
-    border-radius:100px; font-weight:600; font-size:clamp(14px, 2vw, 16px);
-    cursor:pointer; border:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    white-space:nowrap; min-height:44px;
-  }
-  .btn-primary{
-    background:var(--navy-deep); color:#fff; box-shadow:var(--shadow-sm);
-  }
-  .btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow-md); background:var(--navy); }
-  .btn-gold{
-    background:linear-gradient(180deg, var(--gold-light), var(--gold));
-    color:#241605; box-shadow:var(--shadow-sm);
-  }
-  .btn-gold:hover{ transform:translateY(-1px); box-shadow:var(--shadow-md); }
-  .btn-ghost{
-    background:transparent; color:var(--navy-deep); border:1px solid var(--line);
-  }
-  .btn-ghost:hover{ background:#F4F2EC; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ---------- Nav ---------- */
-  .nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(252,251,249,0.92); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px clamp(16px, 4vw, 24px); max-width:1120px; margin:0 auto;
-    gap:12px;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* Logo image */
-  .logo-link{ display:inline-flex; align-items:center; flex-shrink:0; }
-  .logo-img{ height:clamp(28px, 4vw, 38px); width:auto; max-width:160px; display:block; object-fit:contain; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-  /* Hamburger button */
-  .hamburger{
-    display:none; flex-direction:column; justify-content:center; align-items:center;
-    gap:5px; width:44px; height:44px; background:none; border:none; cursor:pointer;
-    border-radius:10px; transition:background .15s;
-  }
-  .hamburger:hover{ background:rgba(11,30,54,0.06); }
-  .hamburger span{
-    display:block; width:22px; height:2px; background:var(--navy-deep);
-    border-radius:2px; transition:transform .25s ease, opacity .25s ease;
-  }
-  .hamburger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-  .hamburger.active span:nth-child(2){ opacity:0; }
-  .hamburger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
 
-  /* Desktop nav CTA */
-  .nav-cta{ display:none; }
-  @media(min-width:640px){ .nav-cta{display:inline-flex; padding:11px 22px; font-size:14px;} }
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
 
-  /* Mobile nav menu */
-  .nav-mobile{
-    display:none; overflow:hidden; max-height:0;
-    transition:max-height .3s ease; background:rgba(252,251,249,0.98);
-    border-top:1px solid var(--line);
-  }
-  .nav-mobile.open{ max-height:120px; }
-  .nav-mobile-inner{ padding:12px clamp(16px,4vw,24px) 16px; }
-  .nav-mobile .btn{ width:100%; font-size:15px; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  @media(max-width:639px){
-    .hamburger{ display:flex; }
-    .nav-cta{ display:none !important; }
-    .nav-mobile{ display:block; }
-  }
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-  /* ---------- Hero ---------- */
-  .hero{ padding:clamp(48px, 6vw, 72px) 0 clamp(40px, 5vw, 64px); }
-  .hero-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:clamp(32px, 5vw, 64px); align-items:center;
-  }
-  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr; gap:40px;} }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-size:clamp(11px, 1.5vw, 13px); font-weight:600; color:var(--navy-soft);
-    text-transform:uppercase; letter-spacing:0.08em;
-    padding:6px 14px; border:1px solid var(--line); border-radius:100px;
-    background:#fff; margin-bottom:20px;
-  }
-  .eyebrow::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
-  h1{
-    font-size:clamp(28px, 4.6vw, 54px); font-weight:500; line-height:1.1;
-    color:var(--navy-deep); margin-bottom:18px;
-  }
-  h1 em{ font-style:italic; color:var(--gold); }
-  .hero-sub{ font-size:clamp(15px, 2.2vw, 18px); color:var(--slate); margin-bottom:28px; }
-  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px; }
-  @media(max-width:480px){
-    .hero-actions{ flex-direction:column; }
-    .hero-actions .btn{ width:100%; text-align:center; white-space:normal; }
-  }
-  .trust-line{ font-size:clamp(12px, 1.8vw, 14px); color:var(--slate); display:flex; align-items:flex-start; gap:8px; }
-  .trust-line svg{ flex-shrink:0; margin-top:2px; }
+    .display {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+      letter-spacing: -0.01em;
+    }
 
-  /* ---------- Gauge (signature element) ---------- */
-  .gauge-card{
-    background:var(--card); border-radius:20px; box-shadow:var(--shadow-lg);
-    border:1px solid var(--line); padding:clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px) clamp(20px, 3vw, 32px);
-    width:100%; max-width:400px; margin:0 auto;
-  }
-  @media(max-width:900px){ .gauge-card{ max-width:420px; } }
-  .gauge-label{ font-size:13px; color:var(--slate); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:4px;}
-  .gauge-title{ font-family:'Fraunces', serif; font-size:clamp(16px,2.2vw,20px); color:var(--navy-deep); margin-bottom:16px; }
-  .gauge-svg-wrap{ display:flex; justify-content:center; margin-bottom:8px; overflow:hidden; }
-  .gauge-svg-wrap svg{ width:100%; max-width:260px; height:auto; }
-  .gauge-score{ text-anchor:middle; font-family:'Fraunces', serif; }
-  .gauge-caption{ text-align:center; font-size:clamp(11px, 1.5vw, 13px); color:var(--slate); margin-top:4px; }
-  .gauge-footer{
-    display:flex; justify-content:space-between; margin-top:20px; padding-top:16px;
-    border-top:1px solid var(--line); gap:12px; flex-wrap:wrap;
-  }
-  .gauge-stat{ font-size:12px; color:var(--slate); }
-  .gauge-stat b{ display:block; font-family:'Fraunces', serif; font-size:clamp(14px, 2vw, 17px); color:var(--navy-deep); font-weight:500;}
-  #needle{ transform-origin:150px 150px; transform:rotate(-90deg); transition:transform 1.6s cubic-bezier(.2,.8,.2,1); }
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.02em;
+    }
 
-  /* ---------- Section headers ---------- */
-  .section-head{ text-align:center; max-width:600px; margin:0 auto clamp(36px, 5vw, 56px); }
-  .section-eyebrow{ font-size:13px; font-weight:600; color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
-  h2{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(24px,3.4vw,38px); color:var(--navy-deep); line-height:1.15; }
-  .section-sub{ color:var(--slate); font-size:clamp(14px, 2vw, 16px); margin-top:14px; }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 24px);
+    }
 
-  /* ---------- Who is this for ---------- */
-  .checklist{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(10px, 2vw, 16px); max-width:680px; margin:0 auto;
-  }
-  @media(max-width:480px){ .checklist{grid-template-columns:1fr;} }
-  .check-item{
-    display:flex; align-items:flex-start; gap:12px; background:#fff;
-    border:1px solid var(--line); border-radius:14px; padding:clamp(14px, 2.5vw, 18px) clamp(14px, 2.5vw, 20px);
-    font-size:clamp(13px, 1.8vw, 15px); font-weight:500; color:var(--ink);
-  }
-  .check-icon{
-    flex-shrink:0; width:22px; height:22px; min-width:22px; border-radius:50%;
-    background:var(--navy-deep); display:flex; align-items:center; justify-content:center;
-  }
+    .wrap-narrow {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 24px);
+    }
 
-  /* ---------- What we analyse ---------- */
-  .analyse-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px, 2vw, 20px);
-  }
-  @media(max-width:860px){ .analyse-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:480px){ .analyse-grid{grid-template-columns:1fr;} }
-  .analyse-card{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    padding:clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px); box-shadow:var(--shadow-sm);
-    transition:box-shadow .2s ease, transform .2s ease;
-  }
-  .analyse-card:hover{ box-shadow:var(--shadow-md); transform:translateY(-2px); }
-  .analyse-icon{
-    width:44px; height:44px; border-radius:12px; background:#F2ECDF;
-    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
-    flex-shrink:0;
-  }
-  .analyse-card h3{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(16px,2vw,18px); color:var(--navy-deep); margin-bottom:8px; }
-  .analyse-card p{ font-size:clamp(13px, 1.8vw, 14.5px); color:var(--slate); }
+    section {
+      padding: clamp(56px, 8vw, 96px) 0;
+    }
 
-  /* ---------- What you'll receive ---------- */
-  .receive-section{
-    background:var(--navy-deep); color:#fff; border-radius:28px;
-    margin:0 clamp(16px, 4vw, 24px); padding:clamp(48px,6vw,72px) clamp(20px,4vw,24px);
-  }
-  @media(min-width:1168px){ .receive-section{ margin:0 auto; max-width:1120px; } }
-  .receive-section .section-eyebrow{ color:var(--gold-light); }
-  .receive-section h2{ color:#fff; }
-  .receive-section .section-sub{ color:#B8C2D1; }
-  .receive-list{ max-width:560px; margin:clamp(32px,5vw,48px) auto 0; display:flex; flex-direction:column; gap:0; }
-  .receive-item{
-    display:flex; align-items:center; gap:16px; padding:clamp(14px,2.5vw,20px) 4px;
-    border-bottom:1px solid rgba(255,255,255,0.12);
-  }
-  .receive-item:last-child{ border-bottom:none; }
-  .receive-num{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold-light); width:28px; flex-shrink:0; }
-  .receive-item p{ font-size:clamp(14px, 2vw, 16px); font-weight:500; }
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: clamp(13px, 2vw, 16px) clamp(20px, 4vw, 32px);
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: clamp(14px, 2vw, 16px);
+      cursor: pointer;
+      border: none;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      white-space: nowrap;
+      min-height: 44px;
+    }
 
-  /* ---------- How it works ---------- */
-  .timeline{ max-width:640px; margin:0 auto; position:relative; }
-  .timeline::before{
-    content:''; position:absolute; left:19px; top:12px; bottom:12px; width:1px;
-    background:var(--line);
-  }
-  .tl-step{ display:flex; gap:24px; padding-bottom:clamp(24px,4vw,36px); position:relative; }
-  .tl-step:last-child{ padding-bottom:0; }
-  .tl-dot{
-    flex-shrink:0; width:40px; height:40px; border-radius:50%;
-    background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-sm);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:13px; font-weight:500; color:var(--navy-deep);
-    z-index:1;
-  }
-  .tl-content h3{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(15px,2vw,18px); color:var(--navy-deep); margin-bottom:4px; }
-  .tl-content p{ font-size:clamp(13px,1.8vw,14.5px); color:var(--slate); }
+    .btn-primary {
+      background: var(--navy-deep);
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
 
-  /* ---------- Pricing ---------- */
-  .pricing-card{
-    max-width:520px; margin:0 auto; background:#fff; border-radius:24px;
-    border:1px solid var(--line); box-shadow:var(--shadow-lg); overflow:hidden;
-  }
-  .pricing-head{ padding:clamp(24px,4vw,40px) clamp(20px,4vw,40px) clamp(20px,3vw,28px); text-align:center; border-bottom:1px solid var(--line); }
-  .pricing-head .section-eyebrow{ justify-content:center; display:flex; }
-  .pricing-head h3{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(18px,2.5vw,24px); color:var(--navy-deep); margin:8px 0 18px; }
-  .price-row{ display:flex; align-items:baseline; justify-content:center; gap:8px; }
-  .price-amt{ font-family:'Fraunces', serif; font-size:clamp(40px,6vw,52px); color:var(--navy-deep); font-weight:500; }
-  .price-note{ font-size:14px; color:var(--slate); margin-top:6px; }
-  .pricing-body{ padding:clamp(20px,3vw,32px) clamp(20px,4vw,40px) clamp(24px,4vw,40px); }
-  .pricing-list{ display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
-  .pricing-list .check-row{ display:flex; align-items:flex-start; gap:12px; font-size:clamp(13px,1.8vw,15px); }
-  .pricing-body .btn{ width:100%; }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      background: var(--navy);
+    }
 
-  /* ---------- FAQ ---------- */
-  .faq-wrap{ max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
-  .faq-item{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
-  .faq-q{
-    width:100%; text-align:left; padding:clamp(16px,2.5vw,20px) clamp(16px,2.5vw,22px);
-    background:none; border:none; cursor:pointer;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    font-size:clamp(14px,1.8vw,16px); font-weight:600; color:var(--navy-deep); font-family:'Inter',sans-serif;
-    min-height:44px;
-  }
-  .faq-q .plus{ flex-shrink:0; width:20px; height:20px; position:relative; }
-  .faq-q .plus::before, .faq-q .plus::after{ content:''; position:absolute; background:var(--navy-deep); transition:transform .25s ease; }
-  .faq-q .plus::before{ width:14px; height:2px; top:9px; left:3px; }
-  .faq-q .plus::after{ width:2px; height:14px; top:3px; left:9px; }
-  .faq-item.open .plus::after{ transform:rotate(90deg); opacity:0; }
-  .faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
-  .faq-a p{ padding:0 clamp(16px,2.5vw,22px) 20px; font-size:clamp(13px,1.8vw,14.5px); color:var(--slate); max-width:560px; }
+    .btn-gold {
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
+      color: #241605;
+      box-shadow: var(--shadow-sm);
+    }
 
-  /* ---------- Final CTA ---------- */
-  .final-cta{ text-align:center; }
-  .final-cta h2{ margin-bottom:16px; }
-  .final-cta .section-sub{ margin:0 auto 36px; }
-  @media(max-width:480px){
-    .final-cta .btn{ width:100%; white-space:normal; }
-  }
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
 
-  /* ---------- Sticky mobile CTA ---------- */
-  .sticky-cta{
-    position:fixed; bottom:0; left:0; right:0; z-index:60;
-    background:rgba(252,251,249,0.92); backdrop-filter:blur(10px);
-    border-top:1px solid var(--line); padding:12px clamp(16px,4vw,20px);
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    transform:translateY(100%); transition:transform .3s ease;
-  }
-  .sticky-cta.show{ transform:translateY(0); }
-  .sticky-cta .price-info{ font-size:13px; color:var(--slate); }
-  .sticky-cta .price-info b{ display:block; font-family:'Fraunces', serif; font-size:17px; color:var(--navy-deep); }
-  .sticky-cta .btn{ padding:12px 22px; font-size:14px; flex-shrink:0; }
-  @media(min-width:900px){ .sticky-cta{ display:none; } }
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy-deep);
+      border: 1px solid var(--line);
+    }
 
-  footer{ padding:clamp(28px,4vw,40px) clamp(16px,4vw,24px); text-align:center; color:var(--slate); font-size:13px; border-top:1px solid var(--line); }
-</style>
+    .btn-ghost:hover {
+      background: #F4F2EC;
+    }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(252, 251, 249, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px clamp(16px, 4vw, 24px);
+      max-width: 1120px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+
+    /* Logo image */
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: clamp(28px, 4vw, 38px);
+      width: auto;
+      max-width: 160px;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background .15s;
+    }
+
+    .hamburger:hover {
+      background: rgba(11, 30, 54, 0.06);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy-deep);
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Desktop nav CTA */
+    .nav-cta {
+      display: none;
+    }
+
+    @media(min-width:640px) {
+      .nav-cta {
+        display: inline-flex;
+        padding: 11px 22px;
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile nav menu */
+    .nav-mobile {
+      display: none;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .3s ease;
+      background: rgba(252, 251, 249, 0.98);
+      border-top: 1px solid var(--line);
+    }
+
+    .nav-mobile.open {
+      max-height: 120px;
+    }
+
+    .nav-mobile-inner {
+      padding: 12px clamp(16px, 4vw, 24px) 16px;
+    }
+
+    .nav-mobile .btn {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    @media(max-width:639px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none !important;
+      }
+
+      .nav-mobile {
+        display: block;
+      }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: clamp(48px, 6vw, 72px) 0 clamp(40px, 5vw, 64px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+
+    @media(max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: clamp(11px, 1.5vw, 13px);
+      font-weight: 600;
+      color: var(--navy-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4.6vw, 54px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--navy-deep);
+      margin-bottom: 18px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: var(--slate);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    @media(max-width:480px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+      }
+    }
+
+    .trust-line {
+      font-size: clamp(12px, 1.8vw, 14px);
+      color: var(--slate);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .trust-line svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ---------- Gauge (signature element) ---------- */
+    .gauge-card {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line);
+      padding: clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px) clamp(20px, 3vw, 32px);
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:900px) {
+      .gauge-card {
+        max-width: 420px;
+      }
+    }
+
+    .gauge-label {
+      font-size: 13px;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .gauge-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--navy-deep);
+      margin-bottom: 16px;
+    }
+
+    .gauge-svg-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+
+    .gauge-svg-wrap svg {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+
+    .gauge-score {
+      text-anchor: middle;
+      font-family: 'Fraunces', serif;
+    }
+
+    .gauge-caption {
+      text-align: center;
+      font-size: clamp(11px, 1.5vw, 13px);
+      color: var(--slate);
+      margin-top: 4px;
+    }
+
+    .gauge-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .gauge-stat {
+      font-size: 12px;
+      color: var(--slate);
+    }
+
+    .gauge-stat b {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(14px, 2vw, 17px);
+      color: var(--navy-deep);
+      font-weight: 500;
+    }
+
+    #needle {
+      transform-origin: 150px 150px;
+      transform: rotate(-90deg);
+      transition: transform 1.6s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    /* ---------- Section headers ---------- */
+    .section-head {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto clamp(36px, 5vw, 56px);
+    }
+
+    .section-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(24px, 3.4vw, 38px);
+      color: var(--navy-deep);
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      color: var(--slate);
+      font-size: clamp(14px, 2vw, 16px);
+      margin-top: 14px;
+    }
+
+    /* ---------- Who is this for ---------- */
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 2vw, 16px);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:480px) {
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: clamp(14px, 2.5vw, 18px) clamp(14px, 2.5vw, 20px);
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ---------- What we analyse ---------- */
+    .analyse-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(12px, 2vw, 20px);
+    }
+
+    @media(max-width:860px) {
+      .analyse-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:480px) {
+      .analyse-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .analyse-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+
+    .analyse-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .analyse-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #F2ECDF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+
+    .analyse-card h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+    }
+
+    .analyse-card p {
+      font-size: clamp(13px, 1.8vw, 14.5px);
+      color: var(--slate);
+    }
+
+    /* ---------- What you'll receive ---------- */
+    .receive-section {
+      background: var(--navy-deep);
+      color: #fff;
+      border-radius: 28px;
+      margin: 0 clamp(16px, 4vw, 24px);
+      padding: clamp(48px, 6vw, 72px) clamp(20px, 4vw, 24px);
+    }
+
+    @media(min-width:1168px) {
+      .receive-section {
+        margin: 0 auto;
+        max-width: 1120px;
+      }
+    }
+
+    .receive-section .section-eyebrow {
+      color: var(--gold-light);
+    }
+
+    .receive-section h2 {
+      color: #fff;
+    }
+
+    .receive-section .section-sub {
+      color: #B8C2D1;
+    }
+
+    .receive-list {
+      max-width: 560px;
+      margin: clamp(32px, 5vw, 48px) auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .receive-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: clamp(14px, 2.5vw, 20px) 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .receive-item:last-child {
+      border-bottom: none;
+    }
+
+    .receive-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--gold-light);
+      width: 28px;
+      flex-shrink: 0;
+    }
+
+    .receive-item p {
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: 500;
+    }
+
+    /* ---------- How it works ---------- */
+    .timeline {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .tl-step {
+      display: flex;
+      gap: 24px;
+      padding-bottom: clamp(24px, 4vw, 36px);
+      position: relative;
+    }
+
+    .tl-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .tl-dot {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy-deep);
+      z-index: 1;
+    }
+
+    .tl-content h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--navy-deep);
+      margin-bottom: 4px;
+    }
+
+    .tl-content p {
+      font-size: clamp(13px, 1.8vw, 14.5px);
+      color: var(--slate);
+    }
+
+    /* ---------- Pricing ---------- */
+    .pricing-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .pricing-head {
+      padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 40px) clamp(20px, 3vw, 28px);
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pricing-head .section-eyebrow {
+      justify-content: center;
+      display: flex;
+    }
+
+    .pricing-head h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--navy-deep);
+      margin: 8px 0 18px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .price-amt {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 6vw, 52px);
+      color: var(--navy-deep);
+      font-weight: 500;
+    }
+
+    .price-note {
+      font-size: 14px;
+      color: var(--slate);
+      margin-top: 6px;
+    }
+
+    .pricing-body {
+      padding: clamp(20px, 3vw, 32px) clamp(20px, 4vw, 40px) clamp(24px, 4vw, 40px);
+    }
+
+    .pricing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .pricing-list .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: clamp(13px, 1.8vw, 15px);
+    }
+
+    .pricing-body .btn {
+      width: 100%;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: clamp(16px, 2.5vw, 20px) clamp(16px, 2.5vw, 22px);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: clamp(14px, 1.8vw, 16px);
+      font-weight: 600;
+      color: var(--navy-deep);
+      font-family: 'Inter', sans-serif;
+      min-height: 44px;
+    }
+
+    .faq-q .plus {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
+
+    .faq-q .plus::before,
+    .faq-q .plus::after {
+      content: '';
+      position: absolute;
+      background: var(--navy-deep);
+      transition: transform .25s ease;
+    }
+
+    .faq-q .plus::before {
+      width: 14px;
+      height: 2px;
+      top: 9px;
+      left: 3px;
+    }
+
+    .faq-q .plus::after {
+      width: 2px;
+      height: 14px;
+      top: 3px;
+      left: 9px;
+    }
+
+    .faq-item.open .plus::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-a p {
+      padding: 0 clamp(16px, 2.5vw, 22px) 20px;
+      font-size: clamp(13px, 1.8vw, 14.5px);
+      color: var(--slate);
+      max-width: 560px;
+    }
+
+    /* ---------- Final CTA ---------- */
+    .final-cta {
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      margin-bottom: 16px;
+    }
+
+    .final-cta .section-sub {
+      margin: 0 auto 36px;
+    }
+
+    @media(max-width:480px) {
+      .final-cta .btn {
+        width: 100%;
+        white-space: normal;
+      }
+    }
+
+    /* ---------- Sticky mobile CTA ---------- */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(252, 251, 249, 0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+      padding: 12px clamp(16px, 4vw, 20px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transform: translateY(100%);
+      transition: transform .3s ease;
+    }
+
+    .sticky-cta.show {
+      transform: translateY(0);
+    }
+
+    .sticky-cta .price-info {
+      font-size: 13px;
+      color: var(--slate);
+    }
+
+    .sticky-cta .price-info b {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      color: var(--navy-deep);
+    }
+
+    .sticky-cta .btn {
+      padding: 12px 22px;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    @media(min-width:900px) {
+      .sticky-cta {
+        display: none;
+      }
+    }
+
+    footer {
+      padding: clamp(28px, 4vw, 40px) clamp(16px, 4vw, 24px);
+      text-align: center;
+      color: var(--slate);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="nav" id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="logo-link" aria-label="Evocaa Home">
-      <img src="src/Logo.png" alt="Evocaa" class="logo-img">
-    </a>
-    <!-- Desktop CTA -->
-    <a href="#pricing" class="btn btn-primary nav-cta" id="navCtaDesktop">Book Diagnosis</a>
-    <!-- Hamburger (mobile only) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <!-- Mobile dropdown menu -->
-  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <div class="nav-mobile-inner">
-      <a href="#pricing" class="btn btn-primary" id="navCtaMobile">Book Diagnosis — ₹499</a>
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-link" aria-label="Evocaa Home">
+        <img src="src/Logo.png" alt="Evocaa" class="logo-img">
+      </a>
+      <!-- Desktop CTA -->
+      <a href="#pricing" class="btn btn-primary nav-cta" id="navCtaDesktop">Book Diagnosis</a>
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</nav>
+    <!-- Mobile dropdown menu -->
+    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <div class="nav-mobile-inner">
+        <a href="#pricing" class="btn btn-primary" id="navCtaMobile">Book Diagnosis - ₹499</a>
+      </div>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Business Growth Consulting</div>
-      <h1 class="display">Find out why your interior design business isn't <em>growing</em>.</h1>
-      <p class="hero-sub">A 90-day growth diagnosis for interior designers who are busy with projects, but not getting enough new enquiries.</p>
-      <div class="hero-actions">
-        <a href="#pricing" class="btn btn-gold">Book Your Diagnosis — ₹499</a>
-      </div>
-      <div class="trust-line">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#B8863B" stroke-width="1.4"/><path d="M5 8.2l2 2 4-4.4" stroke="#B8863B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Built for interior design businesses in Tamil Nadu doing ₹5L–₹75L a month
-      </div>
-    </div>
-
-    <div class="gauge-card">
-      <div class="gauge-label">Sample output</div>
-      <div class="gauge-title">Your Business Growth Score</div>
-      <div class="gauge-svg-wrap">
-        <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="#EDE9E0" stroke-width="18" stroke-linecap="round"/>
-          <path d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="url(#gaugeGrad)" stroke-width="18" stroke-linecap="round"
-                stroke-dasharray="377" stroke-dashoffset="130" />
-          <defs>
-            <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#B8863B"/>
-              <stop offset="100%" stop-color="#0B1E36"/>
-            </linearGradient>
-          </defs>
-          <line id="needle" x1="150" y1="150" x2="150" y2="45" stroke="#14202E" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="150" cy="150" r="7" fill="#14202E"/>
-          <text x="150" y="140" class="gauge-score" font-size="34" fill="#0B1E36" font-weight="500">62</text>
-        </svg>
-      </div>
-      <p class="gauge-caption">Referral-dependent, ready for a repeatable enquiry system</p>
-      <div class="gauge-footer">
-        <div class="gauge-stat">Diagnosis time<b>15–20 min call</b></div>
-        <div class="gauge-stat">You receive<b>Growth Blueprint</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO IS THIS FOR -->
-<section id="who">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Who is this for</div>
-      <h2 class="display">Built for interior designers ready to grow</h2>
-    </div>
-    <div class="checklist">
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>Interior design business</div>
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>2+ years in business</div>
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>₹5L–₹75L monthly revenue</div>
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>Mostly depending on referrals</div>
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>Want consistent enquiries</div>
-      <div class="check-item"><span class="check-icon">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>Serious about scaling</div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE ANALYSE -->
-<section id="analyse" style="background:#F6F4EF;">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">What we analyse</div>
-      <h2 class="display">Six areas that decide if you grow</h2>
-    </div>
-    <div class="analyse-grid">
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19V9m6 10V3m6 16V12" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>Business Strategy</h3>
-        <p>How your business is positioned to grow.</p>
-      </div>
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" stroke="#B8863B" stroke-width="1.6"/><path d="M16 16l4 4" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>Lead Generation</h3>
-        <p>Where your enquiries come from today.</p>
-      </div>
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2v5M11 15v5M2 11h5M15 11h5" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="11" r="3.5" stroke="#B8863B" stroke-width="1.6"/></svg></div>
-        <h3>Google Business Profile</h3>
-        <p>How visible you are when people search nearby.</p>
-      </div>
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="14" rx="2" stroke="#B8863B" stroke-width="1.6"/><path d="M3 8h16" stroke="#B8863B" stroke-width="1.6"/></svg></div>
-        <h3>Website</h3>
-        <p>Whether your website turns visitors into enquiries.</p>
-      </div>
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18V9l7-5 7 5v9" stroke="#B8863B" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 18v-6h4v6" stroke="#B8863B" stroke-width="1.6"/></svg></div>
-        <h3>Sales Process</h3>
-        <p>How enquiries are followed up and converted.</p>
-      </div>
-      <div class="analyse-card">
-        <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="8" cy="8" r="4" stroke="#B8863B" stroke-width="1.6"/><circle cx="15" cy="15" r="4" stroke="#B8863B" stroke-width="1.6"/></svg></div>
-        <h3>Competitor Analysis</h3>
-        <p>What other interior designers in your city are doing.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU'LL RECEIVE -->
-<section id="receive">
-  <div class="receive-section">
-    <div class="section-head" style="margin-bottom:0;">
-      <div class="section-eyebrow">What you'll receive</div>
-      <h2 class="display">A clear picture, not just an opinion</h2>
-      <p class="section-sub">Everything is documented, so you always have it to refer back to.</p>
-    </div>
-    <div class="receive-list">
-      <div class="receive-item"><span class="receive-num">01</span><p>Business Growth Score</p></div>
-      <div class="receive-item"><span class="receive-num">02</span><p>Competitor insights</p></div>
-      <div class="receive-item"><span class="receive-num">03</span><p>Personalized 90-day growth blueprint</p></div>
-      <div class="receive-item"><span class="receive-num">04</span><p>Priority action plan</p></div>
-      <div class="receive-item"><span class="receive-num">05</span><p>30-minute growth strategy consultation</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">How it works</div>
-      <h2 class="display">Five steps, start to finish</h2>
-    </div>
-    <div class="timeline">
-      <div class="tl-step">
-        <div class="tl-dot">1</div>
-        <div class="tl-content"><h3>Book your diagnosis</h3><p>Reserve your spot for ₹499.</p></div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-dot">2</div>
-        <div class="tl-content"><h3>Complete the discovery form</h3><p>Tell us about your business in a few minutes.</p></div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-dot">3</div>
-        <div class="tl-content"><h3>15–20 minute discovery call</h3><p>We understand your business and your goals.</p></div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-dot">4</div>
-        <div class="tl-content"><h3>We prepare your growth blueprint</h3><p>A written plan built around your business.</p></div>
-      </div>
-      <div class="tl-step">
-        <div class="tl-dot">5</div>
-        <div class="tl-content"><h3>Growth strategy consultation</h3><p>We walk you through it on a 30-minute call.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" style="background:#F6F4EF;">
-  <div class="wrap">
-    <div class="pricing-card">
-      <div class="pricing-head">
-        <div class="section-eyebrow">Investment</div>
-        <h3>90-Day Business Growth Diagnosis</h3>
-        <div class="price-row">
-          <span class="price-amt">₹499</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Business Growth Consulting</div>
+        <h1 class="display">Find out why your interior design business isn't <em>growing</em>.</h1>
+        <p class="hero-sub">A 90-day growth diagnosis for interior designers who are busy with projects, but not getting
+          enough new enquiries.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-gold">Book Your Diagnosis - ₹499</a>
         </div>
-        <p class="price-note">One-time. No hidden charges.</p>
-      </div>
-      <div class="pricing-body">
-        <div class="pricing-list">
-          <div class="check-row"><span class="check-icon" style="margin-top:2px;">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>Business Growth Score</div>
-          <div class="check-row"><span class="check-icon" style="margin-top:2px;">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>Competitor insights</div>
-          <div class="check-row"><span class="check-icon" style="margin-top:2px;">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>Personalized 90-day growth blueprint</div>
-          <div class="check-row"><span class="check-icon" style="margin-top:2px;">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>Priority action plan</div>
-          <div class="check-row"><span class="check-icon" style="margin-top:2px;">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>30-minute growth strategy consultation</div>
+        <div class="trust-line">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" stroke="#B8863B" stroke-width="1.4" />
+            <path d="M5 8.2l2 2 4-4.4" stroke="#B8863B" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Built for interior design businesses in Tamil Nadu doing ₹5L – ₹75L a month
         </div>
-        <a href="booking.html" class="btn btn-primary">Book Your Diagnosis</a>
+      </div>
+
+      <div class="gauge-card">
+        <div class="gauge-label">Sample output</div>
+        <div class="gauge-title">Your Business Growth Score</div>
+        <div class="gauge-svg-wrap">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="#EDE9E0" stroke-width="18"
+              stroke-linecap="round" />
+            <path d="M30 150 A120 120 0 0 1 270 150" fill="none" stroke="url(#gaugeGrad)" stroke-width="18"
+              stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="130" />
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#B8863B" />
+                <stop offset="100%" stop-color="#0B1E36" />
+              </linearGradient>
+            </defs>
+            <line id="needle" x1="150" y1="150" x2="150" y2="45" stroke="#14202E" stroke-width="3"
+              stroke-linecap="round" />
+            <circle cx="150" cy="150" r="7" fill="#14202E" />
+            <text x="150" y="140" class="gauge-score" font-size="34" fill="#0B1E36" font-weight="500">62</text>
+          </svg>
+        </div>
+        <p class="gauge-caption">Referral-dependent, ready for a repeatable enquiry system</p>
+        <div class="gauge-footer">
+          <div class="gauge-stat">Diagnosis time<b>15–20 min call</b></div>
+          <div class="gauge-stat">You receive<b>Growth Blueprint</b></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="wrap-narrow">
-    <div class="section-head">
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="display">A few things people ask</h2>
+  <!-- WHO IS THIS FOR -->
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Who is this for</div>
+        <h2 class="display">Built for interior designers ready to grow</h2>
+      </div>
+      <div class="checklist">
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>Interior design business</div>
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>2+ years in business</div>
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>₹5L – ₹75L monthly revenue</div>
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>Mostly depending on referrals</div>
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>Want consistent enquiries</div>
+        <div class="check-item"><span class="check-icon">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>Serious about scaling</div>
+      </div>
     </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">Is this for new businesses?<span class="plus"></span></button>
-        <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><p>This is built for interior design businesses with at least 2 years of experience, already getting projects.</p></div>
+  </section>
+
+  <!-- WHAT WE ANALYSE -->
+  <section id="analyse" style="background:#F6F4EF;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">What we analyse</div>
+        <h2 class="display">Six areas that decide if you grow</h2>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">Will I receive a report?<span class="plus"></span></button>
-        <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><p>Yes. You'll get a written Growth Blueprint with your score, insights, and action plan.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">Is this a sales call?<span class="plus"></span></button>
-        <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><p>No. It's a discovery call to understand your business, not a pitch.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">Do I have to hire Evocaa?<span class="plus"></span></button>
-        <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><p>No. The diagnosis and blueprint are yours to use, with or without us.</p></div>
+      <div class="analyse-grid">
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M3 19V9m6 10V3m6 16V12" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round" />
+            </svg></div>
+          <h3>Business Strategy</h3>
+          <p>How your business is positioned to grow.</p>
+        </div>
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="7" stroke="#B8863B" stroke-width="1.6" />
+              <path d="M16 16l4 4" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round" />
+            </svg></div>
+          <h3>Lead Generation</h3>
+          <p>Where your enquiries come from today.</p>
+        </div>
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 2v5M11 15v5M2 11h5M15 11h5" stroke="#B8863B" stroke-width="1.6" stroke-linecap="round" />
+              <circle cx="11" cy="11" r="3.5" stroke="#B8863B" stroke-width="1.6" />
+            </svg></div>
+          <h3>Google Business Profile</h3>
+          <p>How visible you are when people search nearby.</p>
+        </div>
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="3" y="4" width="16" height="14" rx="2" stroke="#B8863B" stroke-width="1.6" />
+              <path d="M3 8h16" stroke="#B8863B" stroke-width="1.6" />
+            </svg></div>
+          <h3>Website</h3>
+          <p>Whether your website turns visitors into enquiries.</p>
+        </div>
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M4 18V9l7-5 7 5v9" stroke="#B8863B" stroke-width="1.6" stroke-linejoin="round" />
+              <path d="M9 18v-6h4v6" stroke="#B8863B" stroke-width="1.6" />
+            </svg></div>
+          <h3>Sales Process</h3>
+          <p>How enquiries are followed up and converted.</p>
+        </div>
+        <div class="analyse-card">
+          <div class="analyse-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="8" cy="8" r="4" stroke="#B8863B" stroke-width="1.6" />
+              <circle cx="15" cy="15" r="4" stroke="#B8863B" stroke-width="1.6" />
+            </svg></div>
+          <h3>Competitor Analysis</h3>
+          <p>What other interior designers in your city are doing.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- WHAT YOU'LL RECEIVE -->
+  <section id="receive">
+    <div class="receive-section">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="section-eyebrow">What you'll receive</div>
+        <h2 class="display">A clear picture, not just an opinion</h2>
+        <p class="section-sub">Everything is documented, so you always have it to refer back to.</p>
+      </div>
+      <div class="receive-list">
+        <div class="receive-item"><span class="receive-num">01</span>
+          <p>Business Growth Score</p>
+        </div>
+        <div class="receive-item"><span class="receive-num">02</span>
+          <p>Competitor insights</p>
+        </div>
+        <div class="receive-item"><span class="receive-num">03</span>
+          <p>Personalized 90-day growth blueprint</p>
+        </div>
+        <div class="receive-item"><span class="receive-num">04</span>
+          <p>Priority action plan</p>
+        </div>
+        <div class="receive-item"><span class="receive-num">05</span>
+          <p>30-minute growth strategy consultation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">How it works</div>
+        <h2 class="display">Five steps, start to finish</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-step">
+          <div class="tl-dot">1</div>
+          <div class="tl-content">
+            <h3>Book your diagnosis</h3>
+            <p>Reserve your spot for ₹499.</p>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot">2</div>
+          <div class="tl-content">
+            <h3>Complete the discovery form</h3>
+            <p>Tell us about your business in a few minutes.</p>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot">3</div>
+          <div class="tl-content">
+            <h3>15–20 minute discovery call</h3>
+            <p>We understand your business and your goals.</p>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot">4</div>
+          <div class="tl-content">
+            <h3>We prepare your growth blueprint</h3>
+            <p>A written plan built around your business.</p>
+          </div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-dot">5</div>
+          <div class="tl-content">
+            <h3>Growth strategy consultation</h3>
+            <p>We walk you through it on a 30-minute call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" style="background:#F6F4EF;">
+    <div class="wrap">
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="section-eyebrow">Investment</div>
+          <h3>90-Day Business Growth Diagnosis</h3>
+          <div class="price-row">
+            <span class="price-amt">₹499</span>
+          </div>
+          <p class="price-note">One-time. No hidden charges.</p>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-list">
+            <div class="check-row"><span class="check-icon" style="margin-top:2px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>Business Growth Score</div>
+            <div class="check-row"><span class="check-icon" style="margin-top:2px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>Competitor insights</div>
+            <div class="check-row"><span class="check-icon" style="margin-top:2px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>Personalized 90-day growth blueprint</div>
+            <div class="check-row"><span class="check-icon" style="margin-top:2px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>Priority action plan</div>
+            <div class="check-row"><span class="check-icon" style="margin-top:2px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 6.2l2.2 2.2 4.8-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>30-minute growth strategy consultation</div>
+          </div>
+          <a href="booking.html" class="btn btn-primary">Book Your Diagnosis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap-narrow">
+      <div class="section-head">
+        <div class="section-eyebrow">FAQ</div>
+        <h2 class="display">A few things people ask</h2>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">Is
+            this for new businesses?<span class="plus"></span></button>
+          <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+            <p>This is built for interior design businesses with at least 2 years of experience, already getting
+              projects.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-2" aria-expanded="false"
+            aria-controls="faq-a-2">Will I receive a report?<span class="plus"></span></button>
+          <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+            <p>Yes. You'll get a written Growth Blueprint with your score, insights, and action plan.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">Is
+            this a sales call?<span class="plus"></span></button>
+          <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+            <p>No. It's a discovery call to understand your business, not a pitch.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">Do
+            I have to hire Evocaa?<span class="plus"></span></button>
+          <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
+            <p>No. The diagnosis and blueprint are yours to use, with or without us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" style="background:#F6F4EF;">
+    <div class="wrap-narrow">
+      <h2 class="display">Your next 90 days can look different.</h2>
+      <p class="section-sub">Start with a clear, honest diagnosis of where your business stands today.</p>
+      <a href="#pricing" class="btn btn-gold">Book Your Growth Diagnosis - ₹499</a>
+    </div>
+  </section>
+
+  <footer>© Evocaa. Business Growth Consulting for Interior Design Businesses.</footer>
+
+  <div class="sticky-cta" id="stickyCta">
+    <div class="price-info">90-Day Diagnosis<b>₹499</b></div>
+    <a href="#pricing" class="btn btn-gold">Book Now</a>
   </div>
-</section>
 
-<!-- FINAL CTA -->
-<section class="final-cta" style="background:#F6F4EF;">
-  <div class="wrap-narrow">
-    <h2 class="display">Your next 90 days can look different.</h2>
-    <p class="section-sub">Start with a clear, honest diagnosis of where your business stands today.</p>
-    <a href="#pricing" class="btn btn-gold">Book Your Growth Diagnosis — ₹499</a>
-  </div>
-</section>
-
-<footer>© Evocaa. Business Growth Consulting for Interior Design Businesses.</footer>
-
-<div class="sticky-cta" id="stickyCta">
-  <div class="price-info">90-Day Diagnosis<b>₹499</b></div>
-  <a href="#pricing" class="btn btn-gold">Book Now</a>
-</div>
-
-<script>
-  // Animate gauge needle on load
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const needle = document.getElementById('needle');
-      // score 62/100 -> angle from -90deg (0) to 90deg (100), so 62 -> -90 + 1.8*62 = 21.6deg
-      needle.style.transform = 'rotate(21.6deg)';
-    }, 300);
-  });
-
-  // Hamburger menu toggle
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  hamburgerBtn.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    hamburgerBtn.classList.toggle('active', isOpen);
-    hamburgerBtn.setAttribute('aria-expanded', isOpen);
-  });
-
-  // Close mobile menu when a link inside is clicked
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      hamburgerBtn.classList.remove('active');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
+  <script>
+    // Animate gauge needle on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const needle = document.getElementById('needle');
+        // score 62/100 -> angle from -90deg (0) to 90deg (100), so 62 -> -90 + 1.8*62 = 21.6deg
+        needle.style.transform = 'rotate(21.6deg)';
+      }, 300);
     });
-  });
 
-  // FAQ toggle
-  function toggleFaq(btn){
-    const item = btn.parentElement;
-    const answer = item.querySelector('.faq-a');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => {
-      el.classList.remove('open');
-      el.querySelector('.faq-a').style.maxHeight = null;
-      el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    // Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
-    if(!isOpen){
-      item.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      btn.setAttribute('aria-expanded','true');
-    }
-  }
 
-  // Sticky CTA visibility
-  const stickyCta = document.getElementById('stickyCta');
-  const pricingSection = document.getElementById('pricing');
-  window.addEventListener('scroll', () => {
-    const heroBottom = document.querySelector('.hero').getBoundingClientRect().bottom;
-    const pricingTop = pricingSection.getBoundingClientRect().top;
-    if(heroBottom < 0 && pricingTop > window.innerHeight){
-      stickyCta.classList.add('show');
-    } else {
-      stickyCta.classList.remove('show');
+    // Close mobile menu when a link inside is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-a').style.maxHeight = null;
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
     }
-  });
-</script>
+
+    // Sticky CTA visibility
+    const stickyCta = document.getElementById('stickyCta');
+    const pricingSection = document.getElementById('pricing');
+    window.addEventListener('scroll', () => {
+      const heroBottom = document.querySelector('.hero').getBoundingClientRect().bottom;
+      const pricingTop = pricingSection.getBoundingClientRect().top;
+      if (heroBottom < 0 && pricingTop > window.innerHeight) {
+        stickyCta.classList.add('show');
+      } else {
+        stickyCta.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
+
 </html>

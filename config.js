@@ -31,11 +31,11 @@ window.CONFIG = (function () {
     // Google Apps Script Web App URL
     GOOGLE_SCRIPT_URL: get('VITE_GOOGLE_SCRIPT_URL'),
 
-    // Google Sheet ID (informational only — the Apps Script auto-detects the
+    // Google Sheet ID (informational only - the Apps Script auto-detects the
     // spreadsheet it is bound to, so this is not used by the form)
     GOOGLE_SHEET_ID: get('VITE_GOOGLE_SHEET_ID'),
 
-    // Owner email (informational only — the Apps Script auto-detects the
+    // Owner email (informational only - the Apps Script auto-detects the
     // account running it, or reads a "OWNER_EMAIL" Script Property)
     OWNER_EMAIL: get('VITE_OWNER_EMAIL'),
 
