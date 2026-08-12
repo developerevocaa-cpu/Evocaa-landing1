@@ -5,6 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Application Received - Evocaa Business Growth Audit</title>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1888160015139200');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
   <meta name="description" content="Your Growth Audit application has been received. Here's what happens next.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -312,6 +326,20 @@
     .hero {
       padding: clamp(48px, 7vw, 72px) 0 clamp(36px, 5vw, 56px);
       text-align: center;
+    }
+
+    /* Logo above title in hero */
+    .hero-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .hero-logo-img {
+      height: clamp(32px, 5vw, 48px);
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
     }
 
     /* Animated check badge - same gold-soft style as index cards */
@@ -664,6 +692,11 @@
 </head>
 
 <body>
+  <!-- Meta Pixel Code (Noscript fallback) -->
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1888160015139200&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code (Noscript fallback) -->
 
   <!-- NAV - same style as index.html/booking.html -->
   <nav class="nav">
@@ -689,6 +722,9 @@
           <path d="M5 12.5l4.5 4.5L19 7" stroke="#B8863B" stroke-width="2.2" stroke-linecap="round"
             stroke-linejoin="round" />
         </svg>
+      </div>
+      <div class="hero-logo-wrap">
+        <img src="src/Logo.png" alt="Evocaa" class="hero-logo-img">
       </div>
       <h1 class="display">Your Growth Audit request is in.</h1>
       <p class="hero-sub">You've taken the first step to find out what's actually stopping your interior business from
